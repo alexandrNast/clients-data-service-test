@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>ru.softlab.efr.common</groupId>
+        <artifactId>efr-parent-pom</artifactId>
+        <version>2.2</version>
+    </parent>
+
+    <groupId>ru.softlab.zikova.efr</groupId>
+    <artifactId>clients-data-service-test</artifactId>
+    <packaging>pom</packaging>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>clients-data-service-test</name>
+
+    <properties>
+        <efr.authentication.version>2.2.2-1.10.0</efr.authentication.version>
+        <efr.utilities.version>3.3.0</efr.utilities.version>
+        <auth-service-support.version>2.2.2-1.10.0</auth-service-support.version>
+        <efr.discovery.version>2.2.1-0.0.1</efr.discovery.version>
+        <efr.transport.version>5.1.1</efr.transport.version>
+        <swagger-backend-generator.version>7.3.0</swagger-backend-generator.version>
+        <efr.logging.version>4.6.0</efr.logging.version>
+        <swagger-codegen-maven-plugin.version>2.3.1</swagger-codegen-maven-plugin.version>
+        <efr.settings.version>2.2.2-0.0.2</efr.settings.version>
+        <efr.bpm.support.version>2.2.2-1.3.0</efr.bpm.support.version>
+    </properties>
+
+    <repositories>
+        <repository>
+            <id>coral</id>
+            <name>coral</name>
+            <url>https://nexus.dos.softlab.ru/repository/efr-service</url>
+        </repository>
+    </repositories>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>coral</id>
+            <name>coral</name>
+            <url>https://nexus.dos.softlab.ru/repository/efr-service</url>
+        </pluginRepository>
+    </pluginRepositories>
+
+<!--    <repositories>-->
+<!--        <repository>-->
+<!--            <id>coral</id>-->
+<!--            <name>coral</name>-->
+<!--            <url>http://coral:18088/repository/efr</url>-->
+<!--        </repository>-->
+<!--    </repositories>-->
+
+<!--    <pluginRepositories>-->
+<!--        <pluginRepository>-->
+<!--            <id>efr-plugin-repo</id>-->
+<!--            <url>http://coral:18088/repository/efr-common</url>-->
+<!--        </pluginRepository>-->
+<!--    </pluginRepositories>-->
+
+    <distributionManagement>
+        <repository>
+            <id>coral</id>
+            <name>coral</name>
+            <url>http://coral:18088/repository/efr-common</url>
+        </repository>
+    </distributionManagement>
+    <modules>
+        <module>clients-data-service-test-app</module>
+        <module>clients-data-service-test-model</module>
+    </modules>
+</project>

@@ -1,0 +1,17 @@
+.idea/uiDesigner.xml
+.idea/artifacts
+.idea/libraries
+.idea/shelf
+.idea/dictionaries
+.idea/dataSources
+.idea/httpRequests
+.idea/deployment.xml
+.idea/workspace.xml
+.idea/jarRepositories.xml
+.idea/checkstyle-idea.xml
+.idea/dataSources.local.xml
+target
+dist
+/.idea/sonarlint/issuestore
+.swagger-codegen*
+*.iml

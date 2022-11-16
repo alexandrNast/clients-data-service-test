@@ -1,0 +1,156 @@
+swagger: '2.0'
+info:
+  title: clients-data-service-test
+  description: Тестовый API
+  version: 1.0.0
+
+tags:
+  - name: Products
+    description: Продукты
+  - name: Clients
+    description: Клиенты
+
+paths:
+  /clients/{clientId}:
+    get:
+      tags:
+        - Clients
+      description: Получение клиента по id
+      operationId: getClientById
+      x-operation-mode: PASSIVE
+      parameters:
+        - in: path
+          name: clientId
+          type: string
+          required: true
+          description: Идентификатор клиента
+      responses:
+        200:
+          description: ОК
+          schema:
+            $ref: '#/definitions/client'
+        400:
+          description: Baq request
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+
+  /clients/all_clients:
+    get:
+      tags:
+        - Clients
+      description: Получение всех клиентов
+      operationId: getAllClient
+      x-operation-mode: PASSIVE
+      x-spring-pageable: true
+      responses:
+        200:
+          description: ОК
+          schema:
+            $ref: '#/definitions/client'
+            description: Список всех клиентов
+        400:
+          description: Baq request
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+
+  /clients/newClient:
+    post:
+      tags:
+        - Clients
+      description: Создание нового клиента
+      operationId: createClient
+      x-operation-mode: ACTIVE
+      parameters:
+        - in: body
+          name: client
+          required: true
+          description: Данные клиента необходимые для создания
+          schema:
+            $ref: '#/definitions/client'
+      responses:
+        201:
+          description: CREATED
+          schema:
+            $ref: '#/definitions/client'
+        400:
+          description: Baq request
+        403:
+          description: Forbidden
+        500:
+          description: Internal server error
+
+  /clients/{clientId}/update:
+    put:
+      tags:
+        - Clients
+      description: Редактирование клиента
+      operationId: updateClient
+      x-operation-mode: ACTIVE
+      parameters:
+        - in: body
+          name: toUpdateInformation
+          required: true
+          description: Новые данные
+          schema:
+            $ref: '#/definitions/client'
+      responses:
+        200:
+          description: ОК
+          schema:
+            $ref: '#/definitions/client'
+        400:
+          description: Baq request
+        403:
+          description: Forbidden
+        404:
+          description: Not Found
+        500:
+         description: Internal server error
+
+  /clients/{clientId}/delete:
+    delete:
+        tags:
+          - Clients
+        description: Удаление клиента
+        operationId: deleteClients
+        x-operation-mode: ACTIVE
+        parameters:
+          - in: path
+            name: clientId
+            type: string
+            required: true
+            description: Удаление клиента по id
+        responses:
+          200:
+            description: ОК
+            schema:
+              type: string
+          400:
+            description: Baq request
+          403:
+            description: Forbidden
+          404:
+            description: Not Found
+          500:
+            description: Internal server error
+
+definitions:
+
+  client:
+    type: object
+    description: Данные клиента
+    properties:
+      name:
+        type: string
+        description: Имя клиента
+      surname:
+        type: string
+        description: Фамилия клиента

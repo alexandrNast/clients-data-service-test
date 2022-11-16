@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>clients-data-service-test</artifactId>
+        <groupId>ru.softlab.zikova.efr</groupId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <packaging>war</packaging>
+
+    <artifactId>clients-data-service-test-app</artifactId>
+
+    <dependencies>
+        <dependency>
+            <groupId>ru.softlab.zikova.efr</groupId>
+            <artifactId>clients-data-service-test-model</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>ru.softlab.efr.infrastructure</groupId>
+            <artifactId>transport-support</artifactId>
+            <version>${efr.transport.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>ru.softlab.efr.authentication</groupId>
+            <artifactId>auth-service-support</artifactId>
+            <version>${auth-service-support.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>ru.softlab.efr.authentication</groupId>
+            <artifactId>auth-service-test</artifactId>
+            <version>${auth-service-support.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>ru.softlab.efr.authentication</groupId>
+            <artifactId>auth-service-client</artifactId>
+            <version>${efr.authentication.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>ru.softlab.efr.authentication</groupId>
+            <artifactId>auth-service-client</artifactId>
+            <version>${efr.authentication.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>ru.softlab.efr.common</groupId>
+            <artifactId>utilities</artifactId>
+            <version>${efr.utilities.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-oxm</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-jpa</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.activemq</groupId>
+            <artifactId>activemq-spring</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-validator</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.activemq</groupId>
+            <artifactId>activemq-spring</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest-all</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.24</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.jayway.jsonpath</groupId>
+            <artifactId>json-path-assert</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>fluent-hc</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.glassfish</groupId>
+            <artifactId>javax.el</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>ru.softlab.efr.infrastructure</groupId>
+            <artifactId>transport-test</artifactId>
+            <version>${efr.transport.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>ru.softlab.efr.infrastructure</groupId>
+            <artifactId>logging-support</artifactId>
+            <version>${efr.logging.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>ru.softlab.efr.infrastructure</groupId>
+            <artifactId>logging-test-support</artifactId>
+            <version>${efr.logging.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>ru.softlab.efr.settings</groupId>
+            <artifactId>common-settings-client</artifactId>
+            <version>${efr.settings.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>ru.softlab.efr.settings</groupId>
+            <artifactId>common-settings-support</artifactId>
+            <version>${efr.settings.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>ru.softlab.efr.infrastructure</groupId>
+            <artifactId>logging-test-support</artifactId>
+            <version>${efr.logging.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>ru.softlab.efr.common</groupId>
+            <artifactId>bpm-model</artifactId>
+            <version>${efr.bpm.support.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>ru.softlab.efr.common</groupId>
+            <artifactId>bpm-support</artifactId>
+            <version>${efr.bpm.support.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>ru.softlab.efr.authentication</groupId>
+                    <artifactId>auth-service-support</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>ru.softlab.efr.common</groupId>
+            <artifactId>bpm-test</artifactId>
+            <version>${efr.bpm.support.version}</version>
+            <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>ru.softlab.efr.authentication</groupId>
+                    <artifactId>auth-service-test</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <version>4.3.17.RELEASE</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <resources>
+            <resource>
+                <directory>${project.basedir}/src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+        <filters>
+            <filter>./build/settings/settings.dev.properties</filter>
+        </filters>
+        <plugins>
+            <plugin>
+                <groupId>io.fabric8</groupId>
+                <artifactId>docker-maven-plugin</artifactId>
+                <configuration>
+                    <skip>false</skip>
+                    <images>
+                        <image>
+                            <name>docker.dos.softlab.ru/rshb/efr/XXX/clients-data-service-test-app</name>
+                            <alias>clients-data-service-test-app</alias>
+                            <build>
+                                <nocache>true</nocache>
+                                <tags>
+                                    <tag>pr</tag>
+                                </tags>
+                                <dockerFileDir>${project.basedir}</dockerFileDir>
+                                <dockerFile>Dockerfile-app</dockerFile>
+                            </build>
+                        </image>
+                        <image>
+                            <name>docker.dos.softlab.ru/rshb/efr/XXX/clients-data-service-test-bd</name>
+                            <alias>clients-data-service-test-db</alias>
+                            <build>
+                                <nocache>true</nocache>
+                                <tags>
+                                    <tag>pr</tag>
+                                </tags>
+                                <dockerFileDir>${project.basedir}</dockerFileDir>
+                                <dockerFile>Dockerfile-db</dockerFile>
+                            </build>
+                        </image>
+                    </images>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>io.swagger</groupId>
+                <artifactId>swagger-codegen-maven-plugin</artifactId>
+                <version>${swagger-codegen-maven-plugin.version}</version>
+                <executions>
+                    <execution>
+                        <id>compile-api</id>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <inputSpec>${project.basedir}/../api.yaml</inputSpec>
+                            <language>ru.softlab.efr.common.swagger.generator.backend.ServerCodegen</language>
+                            <modelPackage>ru.softlab.zikova.efr.exchange.model</modelPackage>
+                            <apiPackage>ru.softlab.zikova.efr.api</apiPackage>
+                            <output>${project.basedir}</output>
+                            <generateSupportingFiles>false</generateSupportingFiles>
+                            <configOptions/>
+                            <additionalProperties>
+                                <additionalProperty>modelFormatterPrefix=Public</additionalProperty>
+                            </additionalProperties>
+                        </configuration>
+                    </execution>
+                </executions>
+                <dependencies>
+                    <dependency>
+                        <groupId>ru.softlab.efr</groupId>
+                        <artifactId>swagger-backend-generator</artifactId>
+                        <version>${swagger-backend-generator.version}</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+
+        </plugins>
+    </build>
+</project>

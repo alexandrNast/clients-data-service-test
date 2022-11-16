@@ -1,0 +1,30 @@
+version: '2'
+services:
+
+  # efr-mq
+  efr-mq:
+    image: docker.dos.softlab.ru/rshb/efr/communication-systems/library/active-mq:0.0.1
+    ports:
+      - "8161:8161"
+      - "61616:61616"
+
+  # приложение clients-data-service-test-db
+  clients-data-service-test-db:
+    build:
+      context: ./clients-data-service-test-app
+      dockerfile: Dockerfile-db
+    ports:
+      - "5435:5432"
+
+  # приложение clients-data-service-test-app
+  clients-data-service-test-app:
+    build:
+      context: ./clients-data-service-test-app
+      dockerfile: Dockerfile-app
+    ports:
+      - "8085:8080"
+      - "9995:9990"
+      - "8785:8787"
+    links:
+      - efr-mq
+      - clients-data-service-test-db:service-db
